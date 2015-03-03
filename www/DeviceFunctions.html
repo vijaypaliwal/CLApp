@@ -31,12 +31,11 @@
                                        log('Button Released');
                                        },
                                        connectionState: function (state){
-                                       // alert("current state"+state);
+                                       alert("current state"+state);
                                        log('Connection State changed to: '+state);
                                        }
                                        });
-        	ScannerDevice.registerListener(Device);
-            function log(msg){
+        	            function log(msg){
                 //alert("current message"+msg);
                 if(!document.getElementById('logData').innerHTML)
                 document.getElementById('logData').innerHTML = msg;
@@ -65,6 +64,7 @@
             }
             function onDeviceReady()
             {
+                ScannerDevice.registerListener(Device);
                 app.receivedEvent('deviceready');
             }
             function exitFromApp()
