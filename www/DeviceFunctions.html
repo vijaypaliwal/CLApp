@@ -7,6 +7,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" />
         
         <title>Device Functions</title>
+        <link rel="stylesheet" type="text/css" href="css/index.css" />
        
         <script language="JavaScript" type="text/javascript" src="cordova.js"></script>
           <script language="JavaScript" type="text/javascript" src="cordova_plugins.js"></script>
@@ -60,7 +61,14 @@
                 },
                 // Update DOM on a Received Event
                 receivedEvent: function(id) {
-                    alert("I ma in");
+                    var parentElement = document.getElementById(id);
+                    var listeningElement = parentElement.querySelector('.listening');
+                    var receivedElement = parentElement.querySelector('.received');
+                    
+                    listeningElement.setAttribute('style', 'display:none;');
+                    receivedElement.setAttribute('style', 'display:block;');
+                    
+                    console.log('Received Event: ' + id);
                 }
             };
             
@@ -92,8 +100,13 @@
     </head>
     <body onLoad="onLoad()">
         
-        <h1 style="text-align:center;font-size:50px;">Version 05</h1>
-         
+        
+        <div id="deviceready" class="blink">
+            <p class="event listening">Connecting to Device</p>
+            <p class="event received">Device is Ready123</p>
+        </div>
+        
+                 
          
          <input type="button" value="Play Error Sound" onclick="Device.playSound([100,100,0,100,100,100,0,100,100,100]);" style="width:300px" /><br />
          <input type="button" value="Play Merry Had a Little Lamb" onclick="playMerryHadALittleLamb();" style="width:300px" /><br />
