@@ -2,22 +2,22 @@ TCordovaLib
 v5
 r1
 cCheck dependencies
-cCpHeader Classes/NSData+Base64.h /Users/Vijaypaliwal/hello/platforms/ios/build/emulator/include/Cordova/NSData+Base64.h
-cCpHeader Classes/CDVPluginResult.h /Users/Vijaypaliwal/hello/platforms/ios/build/emulator/include/Cordova/CDVPluginResult.h
 cCpHeader Classes/CDVInvokedUrlCommand.h /Users/Vijaypaliwal/hello/platforms/ios/build/emulator/include/Cordova/CDVInvokedUrlCommand.h
 cCpHeader Classes/NSDictionary+Extensions.h /Users/Vijaypaliwal/hello/platforms/ios/build/emulator/include/Cordova/NSDictionary+Extensions.h
-cCpHeader Classes/CDVPlugin.h /Users/Vijaypaliwal/hello/platforms/ios/build/emulator/include/Cordova/CDVPlugin.h
-cCpHeader Classes/CDVDebug.h /Users/Vijaypaliwal/hello/platforms/ios/build/emulator/include/Cordova/CDVDebug.h
-cCpHeader Classes/NSMutableArray+QueueAdditions.h /Users/Vijaypaliwal/hello/platforms/ios/build/emulator/include/Cordova/NSMutableArray+QueueAdditions.h
+cCpHeader Classes/NSData+Base64.h /Users/Vijaypaliwal/hello/platforms/ios/build/emulator/include/Cordova/NSData+Base64.h
+cCpHeader Classes/CDVPluginResult.h /Users/Vijaypaliwal/hello/platforms/ios/build/emulator/include/Cordova/CDVPluginResult.h
 cCpHeader Classes/CDVWhitelist.h /Users/Vijaypaliwal/hello/platforms/ios/build/emulator/include/Cordova/CDVWhitelist.h
+cCpHeader Classes/NSMutableArray+QueueAdditions.h /Users/Vijaypaliwal/hello/platforms/ios/build/emulator/include/Cordova/NSMutableArray+QueueAdditions.h
+cCpHeader Classes/CDVDebug.h /Users/Vijaypaliwal/hello/platforms/ios/build/emulator/include/Cordova/CDVDebug.h
 cCpHeader Classes/CDVURLProtocol.h /Users/Vijaypaliwal/hello/platforms/ios/build/emulator/include/Cordova/CDVURLProtocol.h
 cCpHeader Classes/CDVViewController.h /Users/Vijaypaliwal/hello/platforms/ios/build/emulator/include/Cordova/CDVViewController.h
 cCpHeader Classes/CDVCommandDelegate.h /Users/Vijaypaliwal/hello/platforms/ios/build/emulator/include/Cordova/CDVCommandDelegate.h
 cCpHeader Classes/CDV.h /Users/Vijaypaliwal/hello/platforms/ios/build/emulator/include/Cordova/CDV.h
 cCpHeader Classes/CDVAvailability.h /Users/Vijaypaliwal/hello/platforms/ios/build/emulator/include/Cordova/CDVAvailability.h
-cCpHeader Classes/CDVAvailabilityDeprecated.h /Users/Vijaypaliwal/hello/platforms/ios/build/emulator/include/Cordova/CDVAvailabilityDeprecated.h
+cCpHeader Classes/CDVPlugin.h /Users/Vijaypaliwal/hello/platforms/ios/build/emulator/include/Cordova/CDVPlugin.h
 cCpHeader Classes/CDVLocalStorage.h /Users/Vijaypaliwal/hello/platforms/ios/build/emulator/include/Cordova/CDVLocalStorage.h
 cCpHeader Classes/UIDevice+Extensions.h /Users/Vijaypaliwal/hello/platforms/ios/build/emulator/include/Cordova/UIDevice+Extensions.h
+cCpHeader Classes/CDVAvailabilityDeprecated.h /Users/Vijaypaliwal/hello/platforms/ios/build/emulator/include/Cordova/CDVAvailabilityDeprecated.h
 cCpHeader Classes/NSArray+Comparisons.h /Users/Vijaypaliwal/hello/platforms/ios/build/emulator/include/Cordova/NSArray+Comparisons.h
 cCpHeader Classes/CDVCommandQueue.h /Users/Vijaypaliwal/hello/platforms/ios/build/emulator/include/Cordova/CDVCommandQueue.h
 cCpHeader Classes/CDVCommandDelegateImpl.h /Users/Vijaypaliwal/hello/platforms/ios/build/emulator/include/Cordova/CDVCommandDelegateImpl.h
@@ -29,26 +29,26 @@ cCpHeader Classes/CDVWebViewDelegate.h /Users/Vijaypaliwal/hello/platforms/ios/b
 cCpHeader Classes/CDVUserAgentUtil.h /Users/Vijaypaliwal/hello/platforms/ios/build/emulator/include/Cordova/CDVUserAgentUtil.h
 cCpHeader Classes/CDVTimer.h /Users/Vijaypaliwal/hello/platforms/ios/build/emulator/include/Cordova/CDVTimer.h
 cProcessPCH /Users/Vijaypaliwal/hello/platforms/ios/build/sharedpch/CordovaLib_Prefix-cwfqyemxjglhgbhhrkageynnwdcf/CordovaLib_Prefix.pch.pth CordovaLib_Prefix.pch normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
-cCompileC build/CordovaLib.build/Debug-iphonesimulator/CordovaLib.build/Objects-normal/i386/CDVCommandQueue.o /Users/vijaypaliwal/hello/platforms/ios/CordovaLib/Classes/CDVCommandQueue.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
-cCompileC build/CordovaLib.build/Debug-iphonesimulator/CordovaLib.build/Objects-normal/i386/CDVJSON.o /Users/vijaypaliwal/hello/platforms/ios/CordovaLib/Classes/CDVJSON.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+cCompileC build/CordovaLib.build/Debug-iphonesimulator/CordovaLib.build/Objects-normal/i386/CDVCommandDelegateImpl.o /Users/vijaypaliwal/hello/platforms/ios/CordovaLib/Classes/CDVCommandDelegateImpl.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
 cCompileC build/CordovaLib.build/Debug-iphonesimulator/CordovaLib.build/Objects-normal/i386/CDVURLProtocol.o /Users/vijaypaliwal/hello/platforms/ios/CordovaLib/Classes/CDVURLProtocol.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
-cCompileC build/CordovaLib.build/Debug-iphonesimulator/CordovaLib.build/Objects-normal/i386/CDVConfigParser.o /Users/vijaypaliwal/hello/platforms/ios/CordovaLib/Classes/CDVConfigParser.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+cCompileC build/CordovaLib.build/Debug-iphonesimulator/CordovaLib.build/Objects-normal/i386/CDVWebViewDelegate.o /Users/vijaypaliwal/hello/platforms/ios/CordovaLib/Classes/CDVWebViewDelegate.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
 cCompileC build/CordovaLib.build/Debug-iphonesimulator/CordovaLib.build/Objects-normal/i386/NSDictionary+Extensions.o /Users/vijaypaliwal/hello/platforms/ios/CordovaLib/Classes/NSDictionary+Extensions.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
-cCompileC build/CordovaLib.build/Debug-iphonesimulator/CordovaLib.build/Objects-normal/i386/CDVInvokedUrlCommand.o /Users/vijaypaliwal/hello/platforms/ios/CordovaLib/Classes/CDVInvokedUrlCommand.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+cCompileC build/CordovaLib.build/Debug-iphonesimulator/CordovaLib.build/Objects-normal/i386/NSMutableArray+QueueAdditions.o /Users/vijaypaliwal/hello/platforms/ios/CordovaLib/Classes/NSMutableArray+QueueAdditions.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
 cCompileC build/CordovaLib.build/Debug-iphonesimulator/CordovaLib.build/Objects-normal/i386/NSData+Base64.o /Users/vijaypaliwal/hello/platforms/ios/CordovaLib/Classes/NSData+Base64.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+cCompileC build/CordovaLib.build/Debug-iphonesimulator/CordovaLib.build/Objects-normal/i386/CDVInvokedUrlCommand.o /Users/vijaypaliwal/hello/platforms/ios/CordovaLib/Classes/CDVInvokedUrlCommand.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
 cCompileC build/CordovaLib.build/Debug-iphonesimulator/CordovaLib.build/Objects-normal/i386/CDVPluginResult.o /Users/vijaypaliwal/hello/platforms/ios/CordovaLib/Classes/CDVPluginResult.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
 cCompileC build/CordovaLib.build/Debug-iphonesimulator/CordovaLib.build/Objects-normal/i386/CDVPlugin.o /Users/vijaypaliwal/hello/platforms/ios/CordovaLib/Classes/CDVPlugin.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
-cCompileC build/CordovaLib.build/Debug-iphonesimulator/CordovaLib.build/Objects-normal/i386/NSMutableArray+QueueAdditions.o /Users/vijaypaliwal/hello/platforms/ios/CordovaLib/Classes/NSMutableArray+QueueAdditions.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
 cCompileC build/CordovaLib.build/Debug-iphonesimulator/CordovaLib.build/Objects-normal/i386/CDVWhitelist.o /Users/vijaypaliwal/hello/platforms/ios/CordovaLib/Classes/CDVWhitelist.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
 cCompileC build/CordovaLib.build/Debug-iphonesimulator/CordovaLib.build/Objects-normal/i386/CDVViewController.o /Users/vijaypaliwal/hello/platforms/ios/CordovaLib/Classes/CDVViewController.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
 cCompileC build/CordovaLib.build/Debug-iphonesimulator/CordovaLib.build/Objects-normal/i386/CDVLocalStorage.o /Users/vijaypaliwal/hello/platforms/ios/CordovaLib/Classes/CDVLocalStorage.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
 cCompileC build/CordovaLib.build/Debug-iphonesimulator/CordovaLib.build/Objects-normal/i386/UIDevice+Extensions.o /Users/vijaypaliwal/hello/platforms/ios/CordovaLib/Classes/UIDevice+Extensions.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
 cCompileC build/CordovaLib.build/Debug-iphonesimulator/CordovaLib.build/Objects-normal/i386/NSArray+Comparisons.o /Users/vijaypaliwal/hello/platforms/ios/CordovaLib/Classes/NSArray+Comparisons.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+cCompileC build/CordovaLib.build/Debug-iphonesimulator/CordovaLib.build/Objects-normal/i386/CDVCommandQueue.o /Users/vijaypaliwal/hello/platforms/ios/CordovaLib/Classes/CDVCommandQueue.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
 cCompileC build/CordovaLib.build/Debug-iphonesimulator/CordovaLib.build/Objects-normal/i386/CDVJSON_private.o /Users/vijaypaliwal/hello/platforms/ios/CordovaLib/Classes/CDVJSON_private.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
-cCompileC build/CordovaLib.build/Debug-iphonesimulator/CordovaLib.build/Objects-normal/i386/CDVCommandDelegateImpl.o /Users/vijaypaliwal/hello/platforms/ios/CordovaLib/Classes/CDVCommandDelegateImpl.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
-cCompileC build/CordovaLib.build/Debug-iphonesimulator/CordovaLib.build/Objects-normal/i386/CDVUserAgentUtil.o /Users/vijaypaliwal/hello/platforms/ios/CordovaLib/Classes/CDVUserAgentUtil.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+cCompileC build/CordovaLib.build/Debug-iphonesimulator/CordovaLib.build/Objects-normal/i386/CDVConfigParser.o /Users/vijaypaliwal/hello/platforms/ios/CordovaLib/Classes/CDVConfigParser.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+cCompileC build/CordovaLib.build/Debug-iphonesimulator/CordovaLib.build/Objects-normal/i386/CDVJSON.o /Users/vijaypaliwal/hello/platforms/ios/CordovaLib/Classes/CDVJSON.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
 cCompileC build/CordovaLib.build/Debug-iphonesimulator/CordovaLib.build/Objects-normal/i386/CDVHandleOpenURL.o /Users/vijaypaliwal/hello/platforms/ios/CordovaLib/Classes/CDVHandleOpenURL.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
-cCompileC build/CordovaLib.build/Debug-iphonesimulator/CordovaLib.build/Objects-normal/i386/CDVWebViewDelegate.o /Users/vijaypaliwal/hello/platforms/ios/CordovaLib/Classes/CDVWebViewDelegate.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+cCompileC build/CordovaLib.build/Debug-iphonesimulator/CordovaLib.build/Objects-normal/i386/CDVUserAgentUtil.o /Users/vijaypaliwal/hello/platforms/ios/CordovaLib/Classes/CDVUserAgentUtil.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
 cCompileC build/CordovaLib.build/Debug-iphonesimulator/CordovaLib.build/Objects-normal/i386/CDVTimer.o /Users/vijaypaliwal/hello/platforms/ios/CordovaLib/Classes/CDVTimer.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
 cLibtool /Users/Vijaypaliwal/hello/platforms/ios/build/emulator/libCordova.a normal i386
 
@@ -628,7 +628,7 @@ s2844732
 
 CCheck dependencies
 r0
-lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection18"Check dependencies12bf82bfd7a5ba41^f86e9bbfd7a5ba41^---0#1#0#--18"Check dependencies36"AD7BBE47-4533-466A-9A81-EDDE6BE2F7FF-
+lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection18"Check dependenciesf46fbfd9d9a5ba41^2750d4d9d9a5ba41^---0#1#0#--18"Check dependencies36"BA8EAE15-BDA4-4F0A-B2A3-62930DDCC974-
 
 CCompileC build/CordovaLib.build/Debug-iphonesimulator/CordovaLib.build/Objects-normal/i386/CDVCommandDelegateImpl.o /Users/vijaypaliwal/hello/platforms/ios/CordovaLib/Classes/CDVCommandDelegateImpl.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
 s447074443.521420

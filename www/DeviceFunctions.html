@@ -12,31 +12,63 @@
           <script language="JavaScript" type="text/javascript" src="cordova_plugins.js"></script>
         <script language="JavaScript" type="text/javascript" src="js/ScannerLib-Linea-2.0.0.js"></script>
         
+        
         <script language="JavaScript" type="text/javascript">
+            
+                        
+            DeviceObject = new ScannerDevice({
+                                         barcodeData: function (data, bar_type){
+                                         log('Barcode scanned with with data: '+data+' and of type: '+bar_type);
+                                         },
+                                         magneticCardData: function (track1, track2, track3){
+                                         log('Card read with following data: '+track1+'\n'+track2+'\n'+track3);
+                                         },
+                                         magneticCardRawData: function (data){
+                                         log('Raw data read from card reader: '+data);
+                                         },
+                                         buttonPressed: function (button){
+                                         // Currently device only registers 1 button.
+                                         log('Button was pressed');
+                                         },
+                                         buttonReleased: function (button){
+                                         // Currently device only registers 1 button.
+                                         log('Button was released');
+                                         },
+                                         connectionState: function (state){
+                                         log('Scanner is now in state: '+state);
+                                         }
+                                         });
+            var app = {
+                // Application Constructor
+                initialize: function() {
+                    this.bindEvents();
+                },
+                // Bind Event Listeners
+                //
+                // Bind any events that are required on startup. Common events are:
+                // 'load', 'deviceready', 'offline', and 'online'.
+                bindEvents: function() {
+                    document.addEventListener('deviceready', this.onDeviceReady, false);
+                },
+                // deviceready Event Handler
+                //
+                // The scope of 'this' is the event. In order to call the 'receivedEvent'
+                // function, we must explicitly call 'app.receivedEvent(...);'
+                onDeviceReady: function() {
+                    ScannerDevice.registerListener(DeviceObject);
+                    app.receivedEvent('deviceready');
+                },
+                // Update DOM on a Received Event
+                receivedEvent: function(id) {
+                    alert("I ma in");
+                }
+            };
+            
+            app.initialize();
             //alert("into script");
-        	Device = new ScannerDevice({
-                                       barcodeData: function (data, type){
-                                       log('Barcode Read: "'+data+'", "'+type+'"');
-                                       },
-                                       magneticCardData: function (track1, track2, track3){
-                                       log('Card Read "'+track1+'", "'+track2+'", "'+track3+'"');
-                                       },
-                                       magneticCardRawData: function (data){
-                                       log('Card Read "'+data+'"');
-                                       },
-                                       buttonPressed: function (){
-                                       log('Button Pressed');
-                                       },
-                                       buttonReleased: function (){
-                                       log('Button Released');
-                                       },
-                                       connectionState: function (state){
-                                      
-                                       log('Connection State changed to: '+state);
-                                       }
-                                       });
-        	            function log(msg){
-                //alert("current message"+msg);
+        	
+        	 function log(msg){
+                alert("current message"+msg);
                 if(!document.getElementById('logData').innerHTML)
                 document.getElementById('logData').innerHTML = msg;
                 else
@@ -53,27 +85,7 @@
                                            Device.playSound([sounds[position] * 500, 250]);
                                            position++;
                                            }, 250);
-            }
-            
-            
-            
-            
-            function onLoad()
-            {
-                document.addEventListener("deviceready", onDeviceReady, true);
-            }
-            function onDeviceReady()
-            {
-                ScannerDevice.registerListener(Device);
-                 alert("current state register");
-                app.receivedEvent('deviceready');
-            }
-            function exitFromApp()
-            {
-                
-                navigator.device.exitApp();
-                
-            }
+            }            
             
             </script>
         
