@@ -1,0 +1,112 @@
+
+
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <meta name="format-detection" content="telephone=no" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" />
+        
+        <title>Device Functions</title>
+       
+        <script language="JavaScript" type="text/javascript" src="cordova.js"></script>
+          <script language="JavaScript" type="text/javascript" src="cordova_plugins.js"></script>
+        <script language="JavaScript" type="text/javascript" src="js/ScannerLib-Linea-2.0.0.js"></script>
+        
+        <script language="JavaScript" type="text/javascript">
+            //alert("into script");
+        	Device = new ScannerDevice({
+                                       barcodeData: function (data, type){
+                                       log('Barcode Read: "'+data+'", "'+type+'"');
+                                       },
+                                       magneticCardData: function (track1, track2, track3){
+                                       log('Card Read "'+track1+'", "'+track2+'", "'+track3+'"');
+                                       },
+                                       magneticCardRawData: function (data){
+                                       log('Card Read "'+data+'"');
+                                       },
+                                       buttonPressed: function (){
+                                       log('Button Pressed');
+                                       },
+                                       buttonReleased: function (){
+                                       log('Button Released');
+                                       },
+                                       connectionState: function (state){
+                                       // alert("current state"+state);
+                                       log('Connection State changed to: '+state);
+                                       }
+                                       });
+        	ScannerDevice.registerListener(Device);
+            function log(msg){
+                //alert("current message"+msg);
+                if(!document.getElementById('logData').innerHTML)
+                document.getElementById('logData').innerHTML = msg;
+                else
+                document.getElementById('logData').innerHTML += "<br />"+msg;
+            }
+            function playMerryHadALittleLamb(){
+                var sounds = [3,2,1,2,3,3,3,2,2,2,3,3,3,3,2,1,2,3,3,3,3,2,3,2,1];
+                var position = 0;
+                var interval = setInterval(function (){
+                                           if(position >= sounds.length){
+                                           clearInterval(interval);
+                                           return;
+                                           }
+                                           Device.playSound([sounds[position] * 500, 250]);
+                                           position++;
+                                           }, 250);
+            }
+            
+            
+            
+            
+            function onLoad()
+            {
+                document.addEventListener("deviceready", onDeviceReady, true);
+            }
+            function onDeviceReady()
+            {
+                app.receivedEvent('deviceready');
+            }
+            function exitFromApp()
+            {
+                
+                navigator.device.exitApp();
+                
+            }
+            
+            </script>
+        
+    </head>
+    <body onLoad="onLoad()">
+        
+        <h1 style="text-align:center;font-size:50px;">Version 05</h1>
+         
+         
+         <input type="button" value="Play Error Sound" onclick="Device.playSound([100,100,0,100,100,100,0,100,100,100]);" style="width:300px" /><br />
+         <input type="button" value="Play Merry Had a Little Lamb" onclick="playMerryHadALittleLamb();" style="width:300px" /><br />
+         
+         <input type="button" value="Enable All Barcodes" onclick="Device.enableBarcode(ScannerDevice.CONSTANTS.BAR_TYPES.BAR_ALL, true);" style="width:300px" /><br />
+         <input type="button" value="Disable All Barcodes" onclick="Device.enableBarcode(ScannerDevice.CONSTANTS.BAR_TYPES.BAR_ALL, false);" style="width:300px" /><br />
+         
+         <input type="button" value="Start Scan" onclick="Device.startScan();" style="width:150px" />
+         <input type="button" value="Stop Scan" onclick="Device.stopScan();" style="width:150px" /><br />
+         
+         <input type="button" value="Set Scan Timeout to 10 seconds" onclick="Device.setScanTimeout(10);" style="width:300px" /><br />
+         
+         <input type="button" value="Disable Button" onclick="Device.setScanButtonMode(ScannerDevice.CONSTANTS.BUTTON_DISABLED);" style="width:150px" />
+         <input type="button" value="Enable Button" onclick="Device.setScanButtonMode(ScannerDevice.CONSTANTS.BUTTON_ENABLED);" / style="width:150px"><br />
+         
+         <input type="button" value="Enable Persistant Scanning" onclick="Device.setScanMode(ScannerDevice.CONSTANTS.MODE_MULTI_SCAN);" style="width:150px" />
+         <input type="button" value="Disable Persistant Scanning" onclick="Device.setScanMode(ScannerDevice.CONSTANTS.MODE_SINGLE_SCAN);" style="width:150px" /><br />
+         
+         <input type="button" value="Set Random Beep On Scan" onclick="Device.setScanBeep(true, [Math.floor(Math.random() * 5000), Math.floor(Math.random() * 1000), Math.floor(Math.random() * 5000), Math.floor(Math.random() * 1000)]);" style="width:150px" />
+         <input type="button" value="Disable Beep On Scan" onclick="Device.setScanBeep(false, []);" style="width:150px" /><br />
+         
+         <input type="button" value="Use Extended Barcodes" onclick="Device.setBarcodeTypeMode(ScannerDevice.CONSTANTS.BARCODE_TYPE_EXTENDED);" style="width:150px" />
+         <input type="button" value="Use Default Barcodes" onclick="Device.setBarcodeTypeMode(ScannerDevice.CONSTANTS.BARCODE_TYPE_DEFAULT);" style="width:150px" /><br />
+         
+         <p style="text-align:center;font-weight:bold">Captured Events:</p>
+         <hr />
+         <div id="logData" style="width:100%;height:300px;overflow:auto;background-color:#EEEEEE"></div>
+    </body>
+</html>
