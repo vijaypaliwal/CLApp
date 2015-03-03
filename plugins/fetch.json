@@ -1,9 +1,0 @@
-{
-    "com.allada.phonegap.webinterface": {
-        "source": {
-            "type": "git",
-            "url": "https://github.com/AlladaInc/LineaDevice.git",
-            "subdir": "."
-        }
-    }
-}
