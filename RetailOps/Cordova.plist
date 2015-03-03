@@ -9,7 +9,7 @@
 	<key>TopActivityIndicator</key>
 	<string>gray</string>
 	<key>EnableLocation</key>
-	<true/>
+	<false/>
 	<key>EnableViewportScale</key>
 	<true/>
 	<key>AutoHideSplashScreen</key>
@@ -56,7 +56,8 @@
 		<string>CDVFile</string>
 		<key>FileTransfer</key>
 		<string>CDVFileTransfer</string>
-		 
+		<key>Geolocation</key>
+		<string>CDVLocation</string>
 		<key>Notification</key>
 		<string>CDVNotification</string>
 		<key>Media</key>
