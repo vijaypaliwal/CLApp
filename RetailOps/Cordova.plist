@@ -58,12 +58,10 @@
 		<string>CDVFileTransfer</string>
 		<key>Geolocation</key>
 		<string>CDVLocation</string>
-		<key>Notification</key>
-		<string>CDVNotification</string>
+		
 		<key>Media</key>
 		<string>CDVSound</string>
-		<key>Capture</key>
-		<string>CDVCapture</string>
+		
 		<key>SplashScreen</key>
 		<string>CDVSplashScreen</string>
 		<key>Battery</key>
