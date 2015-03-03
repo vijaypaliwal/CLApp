@@ -56,8 +56,7 @@
 		<string>CDVFile</string>
 		<key>FileTransfer</key>
 		<string>CDVFileTransfer</string>
-		<key>Geolocation</key>
-		<string>CDVLocation</string>
+		 
 		<key>Notification</key>
 		<string>CDVNotification</string>
 		<key>Media</key>
