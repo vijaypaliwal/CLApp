@@ -18,6 +18,7 @@
  */
 
 #import <Foundation/Foundation.h>
+#import "CDVAvailability.h"
 
 typedef enum {
     CDVCommandStatus_NO_RESULT = 0,
@@ -37,6 +38,9 @@ typedef enum {
 @property (nonatomic, strong, readonly) NSNumber* status;
 @property (nonatomic, strong, readonly) id message;
 @property (nonatomic, strong)           NSNumber* keepCallback;
+// This property can be used to scope the lifetime of another object. For example,
+// Use it to store the associated NSData when `message` is created using initWithBytesNoCopy.
+@property (nonatomic, strong) id associatedObject;
 
 - (CDVPluginResult*)init;
 + (CDVPluginResult*)resultWithStatus:(CDVCommandStatus)statusOrdinal;
@@ -44,7 +48,10 @@ typedef enum {
 + (CDVPluginResult*)resultWithStatus:(CDVCommandStatus)statusOrdinal messageAsArray:(NSArray*)theMessage;
 + (CDVPluginResult*)resultWithStatus:(CDVCommandStatus)statusOrdinal messageAsInt:(int)theMessage;
 + (CDVPluginResult*)resultWithStatus:(CDVCommandStatus)statusOrdinal messageAsDouble:(double)theMessage;
++ (CDVPluginResult*)resultWithStatus:(CDVCommandStatus)statusOrdinal messageAsBool:(BOOL)theMessage;
 + (CDVPluginResult*)resultWithStatus:(CDVCommandStatus)statusOrdinal messageAsDictionary:(NSDictionary*)theMessage;
++ (CDVPluginResult*)resultWithStatus:(CDVCommandStatus)statusOrdinal messageAsArrayBuffer:(NSData*)theMessage;
++ (CDVPluginResult*)resultWithStatus:(CDVCommandStatus)statusOrdinal messageAsMultipart:(NSArray*)theMessages;
 + (CDVPluginResult*)resultWithStatus:(CDVCommandStatus)statusOrdinal messageToErrorObject:(int)errorCode;
 
 + (void)setVerbose:(BOOL)verbose;
@@ -52,8 +59,13 @@ typedef enum {
 
 - (void)setKeepCallbackAsBool:(BOOL)bKeepCallback;
 
-- (NSString*)toJSONString;
-- (NSString*)toSuccessCallbackString:(NSString*)callbackId;
-- (NSString*)toErrorCallbackString:(NSString*)callbackId;
+- (NSString*)argumentsAsJSON;
+
+// These methods are used by the legacy plugin return result method
+- (NSString*)toJSONString CDV_DEPRECATED(3.6, "Only used by toSuccessCallbackString and toErrorCallbackString which are deprecated. This will be removed in 4.0.0");
+
+- (NSString*)toSuccessCallbackString:(NSString*)callbackId CDV_DEPRECATED(3.6, "Use the CDVCommandDelegate method sendPluginResult:callbackId instead. This will be removed in 4.0.0");
+
+- (NSString*)toErrorCallbackString:(NSString*)callbackId CDV_DEPRECATED(3.6, "Use the CDVCommandDelegate method sendPluginResult:callbackId instead. This will be removed in 4.0.0");
 
 @end

@@ -23,21 +23,23 @@
 #import "NSMutableArray+QueueAdditions.h"
 #import "CDVCommandDelegate.h"
 
-#define CDVPluginHandleOpenURLNotification @"CDVPluginHandleOpenURLNotification"
-#define CDVPluginResetNotification @"CDVPluginResetNotification"
+extern NSString* const CDVPageDidLoadNotification;
+extern NSString* const CDVPluginHandleOpenURLNotification;
+extern NSString* const CDVPluginResetNotification;
+extern NSString* const CDVLocalNotification;
+extern NSString* const CDVRemoteNotification;
+extern NSString* const CDVRemoteNotificationError;
 
 @interface CDVPlugin : NSObject {}
 
-// TODO(agrieve): Make these zeroing weak refs once we drop support for 4.3.
-@property (nonatomic, unsafe_unretained) UIWebView* webView;
-@property (nonatomic, strong) NSDictionary* settings;
-@property (nonatomic, unsafe_unretained) UIViewController* viewController;
-@property (nonatomic, unsafe_unretained) id <CDVCommandDelegate> commandDelegate;
+@property (nonatomic, weak) UIWebView* webView;
+@property (nonatomic, weak) UIViewController* viewController;
+@property (nonatomic, weak) id <CDVCommandDelegate> commandDelegate;
 
 @property (readonly, assign) BOOL hasPendingOperation;
 
-- (CDVPlugin*)initWithWebView:(UIWebView*)theWebView settings:(NSDictionary*)classSettings;
 - (CDVPlugin*)initWithWebView:(UIWebView*)theWebView;
+- (void)pluginInitialize;
 
 - (void)handleOpenURL:(NSNotification*)notification;
 - (void)onAppTerminate;
@@ -51,13 +53,15 @@
  - (void) onResume {}
  - (void) onOrientationWillChange {}
  - (void) onOrientationDidChange {}
+ - (void)didReceiveLocalNotification:(NSNotification *)notification;
  */
 
 - (id)appDelegate;
 
-// TODO(agrieve): Deprecate these in favour of using CDVCommandDelegate directly.
-- (NSString*)writeJavascript:(NSString*)javascript;
-- (NSString*)success:(CDVPluginResult*)pluginResult callbackId:(NSString*)callbackId;
-- (NSString*)error:(CDVPluginResult*)pluginResult callbackId:(NSString*)callbackId;
+- (NSString*)writeJavascript:(NSString*)javascript CDV_DEPRECATED(3.6, "Use the CDVCommandDelegate equivalent of evalJs:. This will be removed in 4.0.0");
+
+- (NSString*)success:(CDVPluginResult*)pluginResult callbackId:(NSString*)callbackId CDV_DEPRECATED(3.6, "Use the CDVCommandDelegate equivalent of sendPluginResult:callbackId. This will be removed in 4.0.0");
+
+- (NSString*)error:(CDVPluginResult*)pluginResult callbackId:(NSString*)callbackId CDV_DEPRECATED(3.6, "Use the CDVCommandDelegate equivalent of sendPluginResult:callbackId. This will be removed in 4.0.0");
 
 @end

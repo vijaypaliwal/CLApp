@@ -22,13 +22,7 @@
 @class CDVInvokedUrlCommand;
 @class CDVViewController;
 
-@interface CDVCommandQueue : NSObject {
-    @private
-    NSInteger _lastCommandQueueFlushRequestId;
-    __unsafe_unretained CDVViewController* _viewController;
-    NSMutableArray* _queue;
-    BOOL _currentlyExecuting;
-}
+@interface CDVCommandQueue : NSObject
 
 @property (nonatomic, readonly) BOOL currentlyExecuting;
 
@@ -36,9 +30,9 @@
 - (void)dispose;
 
 - (void)resetRequestId;
-- (void)enqueCommandBatch:(NSString*)batchJSON;
+- (void)enqueueCommandBatch:(NSString*)batchJSON;
 
-- (void)maybeFetchCommandsFromJs:(NSNumber*)requestId;
+- (void)processXhrExecBridgePoke:(NSNumber*)requestId;
 - (void)fetchCommandsFromJs;
 - (void)executePending;
 - (BOOL)execute:(CDVInvokedUrlCommand*)command;
