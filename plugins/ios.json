@@ -1,0 +1,46 @@
+{
+    "prepare_queue": {
+        "installed": [],
+        "uninstalled": []
+    },
+    "config_munge": {
+        "files": {
+            "framework": {
+                "parents": {
+                    "ExternalAccessory.framework": [
+                        {
+                            "xml": false,
+                            "count": 1
+                        }
+                    ]
+                }
+            },
+            "*-Info.plist": {
+                "parents": {
+                    "UISupportedExternalAccessoryProtocols": [
+                        {
+                            "xml": "<array><string>com.datecs.linea.pro.msr</string><string>com.datecs.linea.pro.bar</string></array>",
+                            "count": 1
+                        }
+                    ]
+                }
+            },
+            "config.xml": {
+                "parents": {
+                    "/*": [
+                        {
+                            "xml": "<feature name=\"LineaDevice\"><param name=\"ios-package\" value=\"CDVLineaDevice\" /></feature>",
+                            "count": 1
+                        }
+                    ]
+                }
+            }
+        }
+    },
+    "installed_plugins": {
+        "com.allada.phonegap.webinterface": {
+            "PACKAGE_NAME": "com.shivamitcs.hello"
+        }
+    },
+    "dependent_plugins": {}
+}
